@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mingshi Chen — research on reliable and efficient language agents, post-training data, and machine learning for health.">
+  <meta name="theme-color" content="#f9f8f5">
+  <title>Mingshi Chen | Research</title>
+  <style>
+    :root{--paper:#f9f8f5;--ink:#202d39;--muted:#5c6770;--accent:#196b66;--line:#dedfd9;--wash:#eeeee7}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:26px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:4px}
+    a:hover{color:#104b47}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px;border-radius:2px}
+    .skip{position:absolute;top:10px;left:16px;transform:translateY(-150%);background:white;padding:8px 14px;z-index:10}.skip:focus{transform:none}
+    .layout{max-width:1140px;margin:auto;padding:76px 42px 36px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:72px}
+    .sidebar{align-self:start;position:sticky;top:48px}
+    .monogram{height:64px;width:64px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:Georgia,serif;font-size:26px;letter-spacing:1px;margin-bottom:25px}
+    .sidebar-name{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.2;margin:0 0 10px;font-weight:normal}
+    .sidebar-about{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 24px;max-width:220px}
+    .contact{display:flex;gap:15px;flex-wrap:wrap;font-size:14px;margin-bottom:34px}
+    .nav{display:flex;flex-direction:column;gap:11px;border-top:1px solid var(--line);padding-top:24px}
+    .nav a{color:var(--muted);text-decoration:none;font-size:14px}.nav a:hover{color:var(--accent)}
+    .eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:650;margin:0 0 12px}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,5vw,58px);line-height:1.1;letter-spacing:-1.5px;font-weight:normal;margin:0 0 25px}
+    .intro p{margin:0 0 17px;font-size:17px;line-height:1.75;max-width:730px}
+    .intro .interests{font-size:14px;color:var(--muted);border-left:2px solid var(--accent);padding-left:16px;margin-top:25px}
+    section{margin-top:52px}
+    .section-head{display:flex;gap:20px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:11px;margin-bottom:24px}
+    h2{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.25;font-weight:normal;margin:0;letter-spacing:-.4px}
+    .section-number{font-size:11px;font-variant-numeric:tabular-nums;color:var(--accent);letter-spacing:1px}
+    article{margin:0 0 29px}
+    h3{font-size:17px;line-height:1.45;margin:0 0 8px;font-weight:650}
+    article p{margin:0 0 12px;color:var(--muted);font-size:15px;line-height:1.75}
+    .status{font-size:12px;display:inline-block;border:1px solid #c8d8d0;border-radius:3px;color:#315e50;background:#eef3ec;padding:2px 8px;margin:0 0 11px}
+    .project-meta{font-size:12px;color:var(--accent);letter-spacing:.3px;margin-bottom:8px}
+    .result{font-size:14px;border-left:2px solid #b8c4ba;padding-left:14px}
+    details{margin-top:9px}summary{cursor:pointer;color:var(--accent);font-size:13px;width:fit-content}details p{font-size:14px;margin-top:9px}
+    .entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;margin-bottom:23px}
+    .entry h3{margin-bottom:2px;font-size:16px}.entry p{margin:0;color:var(--muted);font-size:14px}.date{font-size:12px;color:var(--muted);white-space:nowrap;padding-top:3px}
+    .health{background:var(--wash);padding:23px 25px;margin-top:31px;border-radius:3px}.health .eyebrow{margin-bottom:17px}.health article:last-child{margin-bottom:0}
+    .footer{border-top:1px solid var(--line);padding-top:18px;margin-top:48px;display:flex;justify-content:space-between;gap:16px;font-size:12px;color:var(--muted)}
+    @media(max-width:800px){.layout{grid-template-columns:1fr;gap:43px;padding:35px 27px 27px}.sidebar{position:static;display:grid;grid-template-columns:1fr auto;column-gap:20px}.monogram{grid-column:2;grid-row:1 / span 2;margin:0;width:54px;height:54px;font-size:23px}.sidebar-name{font-size:25px}.sidebar-about{max-width:none;margin-bottom:13px}.contact{grid-column:1 / -1;margin-bottom:19px}.nav{grid-column:1 / -1;flex-direction:row;flex-wrap:wrap;gap:10px 22px;padding-top:16px}.intro p{font-size:16px}section{margin-top:43px}}
+    @media(max-width:430px){.layout{padding:28px 21px}.entry{grid-template-columns:1fr;gap:3px}.date{padding:0}.health{padding:20px}.footer{flex-direction:column;gap:4px}h1{font-size:43px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media print{body{background:white;font-size:12px}.layout{display:block;max-width:none;padding:0}.sidebar,.skip,details,.footer{display:none}h1{font-size:32px}section{margin-top:25px}.intro p{font-size:13px}article p{font-size:12px}article,.entry{break-inside:avoid}a{color:inherit}.health{background:none;padding:0}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Profile and navigation">
+      <div class="monogram" aria-hidden="true">MC</div>
+      <p class="sidebar-name">Mingshi Chen</p>
+      <p class="sidebar-about">Language agents · Machine learning<br>Rice University alumnus</p>
+      <div class="contact">
+        <a href="mailto:mc232@rice.edu">Email</a>
+        <a href="https://github.com/cmssmc00">GitHub</a>
+        <a href="cv.pdf">CV (PDF)</a>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#service">Service</a>
+      </nav>
+    </aside>
+    <main>
+      <header class="intro" id="about">
+        <p class="eyebrow">Research &amp; academic work</p>
+        <h1>Mingshi Chen</h1>
+        <p>I work on reliable and efficient language agents, with a focus on how agents act, learn from experience, and use their computational budgets.</p>
+        <p>I completed my master's degree in Electrical and Computer Engineering at Rice University and my bachelor's degree in Electronic Information Science and Technology at Fudan University. My work also includes machine learning for health and reproducible analysis of clinical data.</p>
+        <p class="interests"><strong>Research interests</strong><br>Agent reliability · Context adaptation · Post-training data · Computational efficiency</p>
+      </header>
+
+      <section id="research" aria-labelledby="research-heading">
+        <div class="section-head"><span class="section-number">01</span><h2 id="research-heading">Selected research</h2></div>
+        <article>
+          <h3>DuoGate: Action and Context Control for Reliable Language Agents</h3>
+          <span class="status">Submitted to ICLR 2027 · Under review</span>
+          <p>A framework that couples evidence-based action control with selective context adaptation. The system checks whether actions are grounded and outcomes are supported, then uses separate gates to decide when to learn and which lessons to retain.</p>
+          <p class="result">On AppWorld, DuoGate with MiniMax M2.7 increased mean task completion from <strong>60.7% to 69.2%</strong> and scenario completion from <strong>41.7% to 54.2%</strong> versus ACE over three runs.</p>
+          <details><summary>Methods &amp; evaluation</summary><p>Implemented checks for argument grounding, authorization, outcome support, and completion evidence, with recovery directed toward identified gaps. Evaluated on AppWorld, tau2-Bench, and Terminal-Bench 2, including component and feedback ablations.</p></details>
+        </article>
+        <article>
+          <p class="project-meta">Post-training data &amp; evaluation</p>
+          <h3>Workplace Task Generation for Language-Agent Post-Training</h3>
+          <p>Developing a GDPval-inspired corpus built from O*NET occupations and public workplace documents. Tasks pair realistic requests with supporting files, explicit deliverables, and criterion-level evaluation rubrics.</p>
+          <details><summary>Pipeline details</summary><p>Implemented a WorkGenesis-based pipeline with source provenance, reproducible occupation schedules, resumable parallel generation, deduplication, bounded retries, and file-integrity checks. The broader pipeline supports independent solving, rubric-based judging, defect attribution, and teacher-trajectory collection.</p></details>
+        </article>
+        <article>
+          <p class="project-meta">Agent systems &amp; efficiency</p>
+          <h3>Shared Exploration for Token-Efficient Coding Agents</h3>
+          <p>Designed a task-group architecture in which related coding tasks share a persistent exploration agent while keeping planning, implementation, and evaluation separate. The goal is to reduce repeated retrieval and context-processing costs.</p>
+          <details><summary>System &amp; evaluation</summary><p>Built reproducible task grouping using TF-IDF and cosine similarity, asynchronous evidence exchange, and task-scoped access controls. Implemented a CodeProjectEval harness with isolated outputs, official-test scoring, and request-level token accounting that counts shared exploration once per group.</p></details>
+        </article>
+        <div class="health">
+          <p class="eyebrow">Additional research · Health</p>
+          <article>
+            <h3>Pediatric Brain Tumor Classification</h3>
+            <p>Patient-level classification from whole-slide histopathology using frozen CONCH embeddings and gated-attention multiple-instance learning, alongside age and anatomical location. Audited a cohort of 255 patients and 260 usable slides, and compared hierarchical and global approaches across ten diagnostic classes.</p>
+          </article>
+          <article>
+            <h3>Geographic Variation in COPD Care</h3>
+            <p>Reproducible analysis of inpatient and outpatient encounter data across 44 Austin ZIP codes and 22 quarters. Studied geographic variation in recorded COPD care using observed-to-expected ratios, statistical comparisons, and sensitivity analyses.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" aria-labelledby="education-heading">
+        <div class="section-head"><span class="section-number">02</span><h2 id="education-heading">Education</h2></div>
+        <div class="entry"><div><h3>Rice University</h3><p>Master's degree, Electrical and Computer Engineering</p><p>Houston, Texas</p></div><span class="date">Aug 2024 – Dec 2025</span></div>
+        <div class="entry"><div><h3>Fudan University</h3><p>B.S., Electronic Information Science and Technology</p><p>Shanghai, China</p></div><span class="date">Sep 2020 – Jun 2024</span></div>
+      </section>
+
+      <section id="teaching" aria-labelledby="teaching-heading">
+        <div class="section-head"><span class="section-number">03</span><h2 id="teaching-heading">Teaching</h2></div>
+        <div class="entry"><div><h3>COMP 576</h3><p>Teaching Assistant · Rice University</p></div><span class="date">Fall 2025</span></div>
+        <div class="entry"><div><h3>ELEC 263</h3><p>Teaching Assistant · Rice University</p></div><span class="date">Spring 2025</span></div>
+      </section>
+
+      <section id="service" aria-labelledby="service-heading">
+        <div class="section-head"><span class="section-number">04</span><h2 id="service-heading">Academic service</h2></div>
+        <div class="entry"><div><h3>ICML 2026</h3><p>Conference Reviewer</p></div><span class="date">2026</span></div>
+      </section>
+      <footer class="footer"><span>© 2026 Mingshi Chen</span><span>Updated October 2026</span></footer>
+    </main>
+  </div>
+</body>
+</html>
