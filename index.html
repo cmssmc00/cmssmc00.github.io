@@ -19,7 +19,18 @@ h1{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-1
 section{margin-top:44px}h2{font-family:Georgia,"Times New Roman",serif;font-size:31px;line-height:1.25;margin:0 0 24px;padding-bottom:11px;border-bottom:1px solid var(--line)}h3{font-size:17px;line-height:1.55;margin:0 0 7px;font-weight:700}p{margin:0 0 12px}
 .entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;margin-bottom:24px}.entry p{margin:0;color:var(--muted);font-size:15px}.date{font-size:14px;white-space:nowrap;color:var(--muted);padding-top:2px}
 article{margin-bottom:30px}article:last-child{margin-bottom:0}article p{font-size:15px;color:var(--muted);line-height:1.8}.status{display:block;font-size:14px;color:var(--text);font-style:italic;margin:0 0 12px}.result{padding-left:17px;border-left:2px solid var(--line);margin:14px 0;color:var(--text)}
-.method-figure{max-width:900px;margin:24px auto}.method-figure a{display:block;background:#fff;border:1px solid #c9cdd3;border-radius:8px;padding:10px;overflow:hidden}.method-figure img{display:block;width:100%;height:auto}.method-figure figcaption{margin-top:9px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center}
+/* 80% of the previous figure width; map its white background to #151515. */
+.method-figure{width:80%;max-width:720px;margin:24px auto}
+.method-figure a{display:block;background:var(--bg);border:1px solid var(--line);border-radius:2px;padding:8px;overflow:hidden;cursor:zoom-in}
+.method-figure img{display:block;width:100%;height:auto}
+.method-figure img,.figure-dialog img{filter:invert(91.76470588%) hue-rotate(180deg)}
+.method-figure figcaption{margin-top:9px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center}
+.figure-dialog{width:calc(100vw - 32px);max-width:1680px;max-height:calc(100vh - 32px);margin:auto;padding:16px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:4px}
+.figure-dialog::backdrop{background:rgba(0,0,0,.82)}
+.figure-dialog img{display:block;width:100%;height:auto;max-height:calc(100vh - 112px);object-fit:contain}
+.figure-dialog-close{display:block;margin:0 0 12px auto;padding:5px 10px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:3px;font:inherit;cursor:pointer}
+.figure-dialog-close:focus-visible{outline:2px solid var(--link);outline-offset:3px}
+@media print{.method-figure img{filter:none}.method-figure a{background:white}.figure-dialog{display:none!important}}
 details{margin-top:8px}summary{color:var(--link);cursor:pointer;font-size:14px;width:fit-content;max-width:100%}details p{margin:9px 0 0}.project-meta,.eyebrow{font-size:13px;letter-spacing:.7px;color:var(--muted);margin:0 0 8px}.health{margin-top:32px}.health>.eyebrow{margin-bottom:17px}
 .footer{border-top:1px solid var(--line);margin-top:44px;padding-top:16px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:12px}
 @media(max-width:700px){.page{padding:30px 24px 25px}.profile{grid-template-columns:156px minmax(0,1fr);gap:24px}.portrait{width:156px;height:156px}h1{font-size:35px;margin:0 0 16px}.contact-line{font-size:14px;margin-bottom:12px}.contact-line strong{font-size:15px}.navigation{font-size:15px;gap:8px 17px;margin-top:28px}.entry{gap:12px}.date{font-size:12px}body{font-size:15px}}
@@ -59,7 +70,7 @@ details{margin-top:8px}summary{color:var(--link);cursor:pointer;font-size:14px;w
           <span class="status">Manuscript submitted to ICLR 2027; under review.</span>
           <p>DuoGate links action control with selective context adaptation, using execution outcomes and correction feedback to guide learning. Separate gates determine when to learn and which lessons to retain for later decisions.</p>
           <figure class="method-figure">
-            <a href="duogate-figure-3.png" target="_blank" rel="noopener" aria-label="View DuoGate Figure 3 at full size (opens in a new tab)">
+            <a href="duogate-figure-3.png" target="_blank" rel="noopener" id="duogate-figure-link" aria-label="Enlarge DuoGate Figure 3" aria-haspopup="dialog" aria-controls="duogate-figure-viewer">
               <img src="duogate-figure-3.png" alt="DuoGate execution and learning workflow: proposal, action selection, and execution feedback; eligible updates proceed through reflection and curation, then admission into a playbook for later proposals." width="1640" height="715" loading="lazy" decoding="async">
             </a>
             <figcaption>Figure 3. Execution order and conditional learning in DuoGate. Click to enlarge.</figcaption>
@@ -104,4 +115,26 @@ details{margin-top:8px}summary{color:var(--link);cursor:pointer;font-size:14px;w
         <div class="entry"><div><h3>ICML 2026</h3><p>Conference Reviewer</p></div><span class="date">2026</span></div>
       </section></main>
 <footer class="footer"><span>© 2026 Mingshi Chen</span><span>Updated October 2026</span></footer>
-</div></body></html>
+</div>
+<dialog class="figure-dialog" id="duogate-figure-viewer" aria-label="DuoGate Figure 3: execution order and conditional learning">
+  <button type="button" class="figure-dialog-close" autofocus>Close</button>
+  <img src="duogate-figure-3.png" alt="DuoGate execution and learning workflow: proposal, action selection, execution feedback, update eligibility, candidate generation, and admission into the playbook." width="1640" height="715" loading="lazy" decoding="async">
+</dialog>
+<script>
+(() => {
+  const link = document.getElementById('duogate-figure-link');
+  const viewer = document.getElementById('duogate-figure-viewer');
+  if (!link || !viewer || typeof viewer.showModal !== 'function') return;
+  link.addEventListener('click', event => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    viewer.showModal();
+  });
+  viewer.querySelector('button').addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', event => {
+    const rect = viewer.getBoundingClientRect();
+    if (event.target === viewer && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) viewer.close();
+  });
+})();
+</script>
+</body></html>
