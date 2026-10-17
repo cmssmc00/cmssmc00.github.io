@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mingshi Chen — reliable and efficient language agents, post-training data, and machine learning for health.">
+<meta name="theme-color" content="#151515"><title>Mingshi Chen</title>
+<style>
+:root{color-scheme:dark;--bg:#151515;--text:#e7e7e7;--muted:#b8b8b8;--link:#a2aaff;--line:#696969;--code:#303030}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none;text-underline-offset:4px}a:hover{text-decoration:underline}a:focus-visible,summary:focus-visible{outline:2px solid #d9ddff;outline-offset:5px;border-radius:2px}
+.skip{position:absolute;top:10px;left:18px;transform:translateY(-160%);z-index:10;background:var(--code);padding:8px 14px}.skip:focus{transform:none}
+.page{max-width:1180px;margin:auto;padding:48px 40px 32px}.profile{display:grid;grid-template-columns:224px minmax(0,1fr);gap:32px;align-items:start}
+/* The image is cropped to a square in every layout, preserving the original file. */
+.portrait{display:block;width:224px;height:224px;aspect-ratio:1;object-fit:cover;object-position:50% 78%;border-radius:8px}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-1px;font-size:clamp(38px,4.5vw,54px);line-height:1.12;margin:-3px 0 23px}
+.contact-line{margin:0 0 15px;font-size:18px;line-height:1.7;overflow-wrap:anywhere}.contact-line strong{font-family:Arial,sans-serif;font-size:19px}.email{color:var(--text)}.email code{font-family:inherit;background:var(--code);padding:2px 7px;border-radius:5px;font-size:.96em}.email .separator{color:var(--muted)}.slash{padding:0 7px;color:var(--text)}
+.navigation{display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 12px;margin:31px 0 26px;font-size:18px;line-height:1.7}
+.intro p{margin:0 0 18px}.intro p:last-child{margin-bottom:0}.interests{color:var(--muted);font-size:15px}
+section{margin-top:44px}h2{font-family:Georgia,"Times New Roman",serif;font-size:31px;line-height:1.25;margin:0 0 24px;padding-bottom:11px;border-bottom:1px solid var(--line)}h3{font-size:17px;line-height:1.55;margin:0 0 7px;font-weight:700}p{margin:0 0 12px}
+.entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;margin-bottom:24px}.entry p{margin:0;color:var(--muted);font-size:15px}.date{font-size:14px;white-space:nowrap;color:var(--muted);padding-top:2px}
+article{margin-bottom:30px}article:last-child{margin-bottom:0}article p{font-size:15px;color:var(--muted);line-height:1.8}.status{display:block;font-size:14px;color:var(--text);font-style:italic;margin:0 0 12px}.result{padding-left:17px;border-left:2px solid var(--line);margin:14px 0;color:var(--text)}
+/* 80% of the previous figure width; map its white background to #151515. */
+.method-figure{width:80%;max-width:720px;margin:24px auto}
+.method-figure a{display:block;background:var(--bg);border:1px solid var(--line);border-radius:2px;padding:8px;overflow:hidden;cursor:zoom-in}
+.method-figure img{display:block;width:100%;height:auto}
+.method-figure img,.figure-dialog img{filter:invert(91.76470588%) hue-rotate(180deg)}
+.method-figure figcaption{margin-top:9px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center}
+.figure-dialog{width:calc(100vw - 32px);max-width:1680px;max-height:calc(100vh - 32px);margin:auto;padding:16px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:4px}
+.figure-dialog::backdrop{background:rgba(0,0,0,.82)}
+.figure-dialog img{display:block;width:100%;height:auto;max-height:calc(100vh - 112px);object-fit:contain}
+.figure-dialog-close{display:block;margin:0 0 12px auto;padding:5px 10px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:3px;font:inherit;cursor:pointer}
+.figure-dialog-close:focus-visible{outline:2px solid var(--link);outline-offset:3px}
+@media print{.method-figure img{filter:none}.method-figure a{background:white}.figure-dialog{display:none!important}}
+details{margin-top:8px}summary{color:var(--link);cursor:pointer;font-size:14px;width:fit-content;max-width:100%}details p{margin:9px 0 0}.project-meta,.eyebrow{font-size:13px;letter-spacing:.7px;color:var(--muted);margin:0 0 8px}.health{margin-top:32px}.health>.eyebrow{margin-bottom:17px}
+.footer{border-top:1px solid var(--line);margin-top:44px;padding-top:16px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:12px}
+@media(max-width:700px){.page{padding:30px 24px 25px}.profile{grid-template-columns:156px minmax(0,1fr);gap:24px}.portrait{width:156px;height:156px}h1{font-size:35px;margin:0 0 16px}.contact-line{font-size:14px;margin-bottom:12px}.contact-line strong{font-size:15px}.navigation{font-size:15px;gap:8px 17px;margin-top:28px}.entry{gap:12px}.date{font-size:12px}body{font-size:15px}}
+@media(max-width:480px){.page{padding:27px 20px}.profile{grid-template-columns:1fr;gap:23px}.portrait{width:180px;height:180px}h1{font-size:39px;margin-bottom:16px}.contact-line{font-size:16px}.contact-line strong{font-size:17px}.navigation{justify-content:flex-start;padding:8px 0;gap:6px 18px;font-size:15px;margin-top:26px}.entry{grid-template-columns:1fr;gap:3px}h2{font-size:28px}.footer{flex-direction:column;gap:4px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:white;color:#111;font-size:12px}a{color:#111}.page{padding:0}.profile{grid-template-columns:120px 1fr}.portrait{width:120px;height:120px}h1{font-size:32px}.navigation,.skip,.footer,details{display:none}.contact-line{font-size:13px}.email code{background:none}.email .separator,.entry p,.date,article p{color:#333}.result{color:#111}section{margin-top:24px}article,.entry{break-inside:avoid}}
+</style></head><body>
+<a class="skip" href="#about">Skip to content</a>
+<div class="page"><header class="profile">
+<!-- PHOTO: replace profile.jpg to change the photo. The visible frame stays square. -->
+<img class="portrait" src="profile.jpg?v=graduation-20261017" alt="Mingshi Chen in graduation attire" width="224" height="224">
+<div><h1>Mingshi Chen</h1>
+<!-- EMAIL: update the mailto address and visible text together. -->
+<p class="contact-line"><strong>Email:</strong> <a class="email" href="mailto:cmsfdu@gmail.com" aria-label="Email cmsfdu@gmail.com"><code>cmsfdu <span class="separator">AT</span> gmail <span class="separator">DOT</span> com</code></a></p>
+<p class="contact-line"><strong>Links:</strong> <a href="https://github.com/cmssmc00">GitHub</a><span class="slash">/</span><a href="cv.pdf">CV</a></p>
+</div></header>
+<nav class="navigation" aria-label="Main navigation">
+<a href="#education">[Education]</a>
+<a href="#publications">[Publications]</a>
+<a href="#research">[Research]</a>
+<a href="#teaching">[Teaching]</a>
+<a href="#service">[Service]</a>
+</nav><main id="about"><div class="intro">
+        
+        
+        <p>I work on reliable and efficient language agents, with a focus on how agents act, learn from experience, and use their computational budgets. I am also interested in AI and data science for healthcare.</p>
+        <p>I completed my master's degree in Electrical and Computer Engineering at Rice University and my bachelor's degree in Electronic Information Science and Technology at Fudan University. </p>
+        <p class="interests"><strong>Research interests</strong><br>Agent reliability · Context adaptation · Post-training data · Computational efficiency · Machine Learning for Healthcare</p>
+      </div>
+<section id="education" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <div class="entry"><div><h3>Rice University</h3><p>Master's degree, Electrical and Computer Engineering</p><p>Houston, Texas, USA</p></div><span class="date">Aug 2024 – Dec 2025</span></div>
+        <div class="entry"><div><h3>Fudan University</h3><p>Bachelor’s degree, Electronic Information Science and Technology</p><p>Shanghai, China</p></div><span class="date">Sep 2020 – Jun 2024</span></div>
+      </section>
+<section id="publications" aria-labelledby="publications-heading"><h2 id="publications-heading">Publications &amp; Manuscripts</h2><article>
+          <h3>DuoGate: Action and Context Control for Reliable Language Agents</h3>
+          <span class="status">Manuscript submitted to ICLR 2027; under review.</span>
+          <p>DuoGate links action control with selective context adaptation, using execution outcomes and correction feedback to guide learning. Separate gates determine when to learn and which lessons to retain for later decisions.</p>
+          <figure class="method-figure">
+            <a href="duogate-figure-3.png" target="_blank" rel="noopener" id="duogate-figure-link" aria-label="Enlarge DuoGate Figure 3" aria-haspopup="dialog" aria-controls="duogate-figure-viewer">
+              <img src="duogate-figure-3.png" alt="DuoGate execution and learning workflow: proposal, action selection, and execution feedback; eligible updates proceed through reflection and curation, then admission into a playbook for later proposals." width="1640" height="715" loading="lazy" decoding="async">
+            </a>
+          </figure>
+        </article></section>
+<section id="research" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research Projects</h2>
+        
+        <article>
+          <p class="project-meta">Post-training data &amp; evaluation</p>
+          <h3>Workplace Task Generation for Language-Agent Post-Training</h3>
+          <p>Developing a GDPval-inspired corpus built from O*NET occupations and public workplace documents. Tasks pair realistic requests with supporting files, explicit deliverables, and criterion-level evaluation rubrics.</p>
+          <details><summary>Pipeline details</summary><p>Implemented a WorkGenesis-based pipeline with source provenance, reproducible occupation schedules, resumable parallel generation, deduplication, bounded retries, and file-integrity checks. The broader pipeline supports independent solving, rubric-based judging, defect attribution, and teacher-trajectory collection.</p></details>
+        </article>
+        <article>
+          <p class="project-meta">Agent systems &amp; efficiency</p>
+          <h3>Shared Exploration for Token-Efficient Coding Agents</h3>
+          <p>Designed a task-group architecture in which related coding tasks share a persistent exploration agent while keeping planning, implementation, and evaluation separate. The goal is to reduce repeated retrieval and context-processing costs.</p>
+          <details><summary>System &amp; evaluation</summary><p>Built reproducible task grouping using TF-IDF and cosine similarity, asynchronous evidence exchange, and task-scoped access controls. Implemented a CodeProjectEval harness with isolated outputs, official-test scoring, and request-level token accounting that counts shared exploration once per group.</p></details>
+        </article>
+        <div class="health">
+          <p class="eyebrow">Additional research · Health</p>
+          <article>
+            <h3>Pediatric Brain Tumor Classification</h3>
+            <p>Patient-level classification from whole-slide histopathology using frozen CONCH embeddings and gated-attention multiple-instance learning, alongside age and anatomical location. Audited a cohort of 255 patients and 260 usable slides, and compared hierarchical and global approaches across ten diagnostic classes.</p>
+          </article>
+          <article>
+            <h3>Geographic Variation in COPD Care</h3>
+            <p>Reproducible analysis of inpatient and outpatient encounter data across 44 Austin ZIP codes and 22 quarters. Studied geographic variation in recorded COPD care using observed-to-expected ratios, statistical comparisons, and sensitivity analyses.</p>
+          </article>
+        </div>
+      </section>
+<section id="teaching" aria-labelledby="teaching-heading">
+        <h2 id="teaching-heading">Teaching</h2>
+        <div class="entry"><div><h3>COMP 576</h3><p>Teaching Assistant · Rice University</p></div><span class="date">Fall 2025</span></div>
+        <div class="entry"><div><h3>ELEC 263</h3><p>Teaching Assistant · Rice University</p></div><span class="date">Spring 2025</span></div>
+      </section>
+<section id="service" aria-labelledby="service-heading">
+        <h2 id="service-heading">Academic service</h2>
+        <div class="entry"><div><h3>ICML 2026</h3><p>Conference Reviewer</p></div><span class="date">2026</span></div>
+      </section></main>
+<footer class="footer"><span>© 2026 Mingshi Chen</span><span>Updated October 2026</span></footer>
+</div>
+<dialog class="figure-dialog" id="duogate-figure-viewer" aria-label="DuoGate Figure 3: execution order and conditional learning">
+  <button type="button" class="figure-dialog-close" autofocus>Close</button>
+  <img src="duogate-figure-3.png" alt="DuoGate execution and learning workflow: proposal, action selection, execution feedback, update eligibility, candidate generation, and admission into the playbook." width="1640" height="715" loading="lazy" decoding="async">
+</dialog>
+<script>
+(() => {
+  const link = document.getElementById('duogate-figure-link');
+  const viewer = document.getElementById('duogate-figure-viewer');
+  if (!link || !viewer || typeof viewer.showModal !== 'function') return;
+  link.addEventListener('click', event => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    viewer.showModal();
+  });
+  viewer.querySelector('button').addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', event => {
+    const rect = viewer.getBoundingClientRect();
+    if (event.target === viewer && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) viewer.close();
+  });
+})();
+</script>
+</body></html>
